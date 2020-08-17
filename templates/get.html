@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>get</title>
+</head>
+<body>
+    <table border="1" width="400">
+        <thead>
+            <tr>
+                <td>
+                    姓名
+                </td>
+                <td>
+                    年龄
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+                 <tr>
+                 <td>
+                     {{ student.name }}
+                 </td>
+                     <td>
+                         {{ student.age }}
+                     </td>
+                 <td>
+                     <a href="/delete/{{ student.id }}">delete</a>
+                     <a href="/up/{{ student.id }}">up</a>
+                 </td>
+                 </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+    <a href="/add/">add</a>
+</body>
+</html>
